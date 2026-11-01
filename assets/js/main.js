@@ -52,6 +52,13 @@
     if (img.complete && img.naturalWidth === 0) hide(); else img.addEventListener("error", hide);
   });
 
+  /* ---------- Client logos: show the logo when the file exists, else keep the initials badge ---------- */
+  document.querySelectorAll(".client img").forEach(function (img) {
+    var card = img.closest(".client");
+    if (img.complete && img.naturalWidth > 0) card.classList.add("has-logo");
+    else if (img.complete) img.remove();
+  });
+
   /* ---------- Footer year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 

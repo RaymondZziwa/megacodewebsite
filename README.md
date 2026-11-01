@@ -21,19 +21,26 @@ No build step or framework — open `index.html` in a browser, or upload the who
 ## Before going live
 1. **Forms** currently show a success message only — nothing is sent. Point each `<form>` at a form service
    (e.g. Formspree / Netlify Forms / your own endpoint) by adding `action="..." method="POST"` and removing `data-success`.
-2. **Placeholders to replace:** phone `+256 700 000000` / WhatsApp link `wa.me/256700000000`, the CEO portrait
-   (`about.html`, see the comment in the Executive Desk section), and the client testimonial on `why-us.html`
-   (use a real, approved quote).
+2. **Placeholders to replace:** the client testimonial on `why-us.html` (use a real, approved quote).
+   Contact details in use: `+256 775 563805` (call + WhatsApp) and `support@megacodeug.com`.
 3. **Photos** are linked from the design tool's hosting (`lh3.googleusercontent.com`), which may expire. Download your own
    photos into `assets/img/` and update the `src` attributes.
-4. Confirm product claims (e.g. "1,200+ units", "5,200+ users") are current.
+4. **Client logos** (home page clientele section): save them in `assets/img/clients/` as
+   `prof-bio-research.png`, `fix-dental-naalya.png`, `ocare-pharmacy.png`, `ub-consulting-engineers.png`
+   (transparent PNG works best). Each logo replaces its lettered badge automatically.
+5. **Search engines:** `sitemap.xml` and `robots.txt` assume the site lives at `https://megacodeug.com`. If the domain
+   differs, update both files and the `canonical` / `og:url` tags in each page head. After launch, submit
+   `https://megacodeug.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
+6. Confirm product claims (e.g. "1,200+ units", "5,200+ users") are current.
 
 ## Structure
 ```
 website/
 ├── index.html, services.html, why-us.html, about.html, careers.html, contact.html
+├── sitemap.xml, robots.txt
 └── assets/
     ├── css/styles.css   design tokens + components (light/dark)
     ├── js/main.js       theme toggle, forms, calculators, scroll reveal
-    └── img/             logo-mark.svg, logo-mark-white.svg, favicon.svg
+    └── img/             logo-mark.svg, logo-mark-white.svg, favicon.svg, ceo.jpeg
+        └── clients/     client logos (add yours here)
 ```
