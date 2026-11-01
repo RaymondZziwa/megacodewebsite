@@ -33,11 +33,31 @@ No build step or framework — open `index.html` in a browser, or upload the who
    `https://megacodeug.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
 6. Confirm product claims (e.g. "1,200+ units", "5,200+ users") are current.
 
+## SEO
+Built in:
+- Unique, keyword-focused `<title>` (≤ 61 chars) and meta description (≤ 155 chars) on every page; one `<h1>` per page and a clean heading order.
+- `canonical` URLs, `sitemap.xml` (with images), `robots.txt`, and a `noindex` `404.html`.
+- Structured data (JSON-LD): Organization / ProfessionalService with address, map coordinates, opening hours, phone, email and
+  services (home, about, contact); WebSite; per-page WebPage with breadcrumbs; FAQPage on the contact page (eligible for FAQ rich results).
+- Social sharing: Open Graph + Twitter card tags with a 1200×630 preview image (`assets/img/og-image.png`) for WhatsApp, Facebook, LinkedIn and X.
+- Favicons for all browsers, Apple touch icon and `site.webmanifest`.
+- Speed: icon font trimmed to only the icons used; logos have width/height set to avoid layout shift.
+
+After launch (these matter as much as the code):
+1. **Google Search Console** → add `megacodeug.com`, verify, and submit `https://megacodeug.com/sitemap.xml`. Do the same in Bing Webmaster Tools.
+2. **Google Business Profile** → create/claim "MEGA CODE" at Martyrs Mall, Kyaliwajjala with the *same* name, address and phone
+   (+256 775 563805) used on the site. This is the biggest factor for appearing on Google Maps and "software company near me" searches.
+3. Test the structured data at https://search.google.com/test/rich-results and the share preview at https://www.opengraph.xyz.
+4. Make the host serve `404.html` for missing pages (Netlify/GitHub Pages/Vercel do this automatically) and redirect `www` → non-`www` (or the reverse) and HTTP → HTTPS.
+5. Replace the hot-linked photos (see above) with local, compressed WebP/JPEG files — this improves page speed.
+6. Add new content over time (case studies of client projects, a blog) — fresh, specific pages are what earn rankings.
+7. If you add a new page, add it to `sitemap.xml` too and update `<lastmod>` dates when pages change.
+
 ## Structure
 ```
 website/
 ├── index.html, services.html, why-us.html, about.html, careers.html, contact.html
-├── sitemap.xml, robots.txt
+├── sitemap.xml, robots.txt, 404.html, site.webmanifest, favicon.ico
 └── assets/
     ├── css/styles.css   design tokens + components (light/dark)
     ├── js/main.js       theme toggle, forms, calculators, scroll reveal

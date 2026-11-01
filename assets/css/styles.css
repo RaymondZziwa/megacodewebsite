@@ -640,7 +640,9 @@ h1, h2, h3, h4, p { margin: 0; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; }
 .site-footer .brand-name { color: #fff; }
 .site-footer .brand-tag { color: var(--panel-muted); }
-.site-footer h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
+
+.site-footer .footer-title { font-weight: 700; line-height: 16px; }
+.site-footer h4, .site-footer .footer-title { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
 .site-footer a { font-size: 14px; transition: color .15s; }
 .site-footer a:hover { color: #fff; }
